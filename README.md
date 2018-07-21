@@ -16,7 +16,9 @@ Get into the `project settings` and click `Add firebase to your web app`
 
 `Replace` the content of the `config` object into `src/firebaseConfig.js`.
 
-You now need to create a `firestore` database and you are good to go.
+You now need to create a `firestore` database by clicking on `Database` from side nav and click `Create database` where it says Cloud firestore.
+
+When you are asked for `locked mode` or `test mode` choose **test mode**.
 
 Run `npm start` to start the project.
 

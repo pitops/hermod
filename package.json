@@ -1,5 +1,5 @@
 {
-  "name": "hermod",
+  "name": "tabellarius",
   "version": "0.0.3",
   "scripts": {
     "build": "vue-cli-service build",

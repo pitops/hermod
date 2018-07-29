@@ -5,12 +5,14 @@
             <h4 class="choose-a-project">Choose a project</h4>
             <el-row>
                 <el-col :span="6" v-for="(o, index) in projects" :key="index" :offset="index > 0 ? 2 : 0">
-                    <el-card :body-style="{ padding: '0px' }">
+                    <el-card :body-style="{ padding: '0px' }" class="project">
                         <div class="logo-bg"><p class="app-name">{{ o.name }}</p></div>
                         <div style="padding: 14px;">
-                            <div class="bottom clearfix">
-                                <a target="_blank" class="app-url" :href="o.url">{{ o.url }}</a>
-                                <time class="created-at">{{ creationDate }}</time>
+                            <div class="project-details">
+                                <div class="details">
+                                    <a target="_blank" class="app-url" :href="o.url">{{ o.url }}</a>
+                                    <time class="created-at">{{ creationDate }}</time>
+                                </div>
                                 <router-link :to="{ name: 'project', params: { slug: o.slug }}" tag="el-button"
                                              class="choose-btn">Choose
                                 </router-link>
@@ -94,16 +96,6 @@ export default {
         margin-top: 40px;
     }
 
-    .bottom {
-        margin-top: 13px;
-        line-height: 12px;
-    }
-
-    .choose-btn {
-        float: right;
-        margin-top: -38px;
-    }
-
     .created-at {
         color: #999;
         font-size: 13px;
@@ -111,9 +103,15 @@ export default {
         margin-top: 5px;
     }
 
-    .image {
-        width: 100%;
-        display: block;
+    .project-details {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .choose-btn {
+        margin: 20px;
     }
 
     .clearfix:before,

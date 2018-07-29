@@ -62,8 +62,11 @@
 
             <el-container>
                 <el-main>
-                    <div v-if="!selectedEndpoint">
+                    <div v-if="!selectedEndpoint && namespaces.length">
                         Please select an endpoint from the menu on the left.
+                    </div>
+                    <div v-if="!selectedEndpoint && !namespaces.length">
+                        You can create a namespace and relevant endpoints by clicking on the Add button from the menu on the left.
                     </div>
                     <el-form ref="dispatchForm" :model="dispatchForm" label-width="120px" v-if="selectedEndpoint" id="dispatchForm">
                         <el-button

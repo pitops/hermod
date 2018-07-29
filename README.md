@@ -1,4 +1,4 @@
-# Hermes
+# Hermod
 
 A tool for dispatching pre-arranged payload so you can replay emails.
 You can then save these requests into namespaces and projects and use them over and over again. 

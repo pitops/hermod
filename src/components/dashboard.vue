@@ -73,7 +73,8 @@ export default {
     }
   },
   created () {
-    db.collection('projects').get()
+    db.collection('projects')
+      .get()
       .then(querySnapshot => {
         this.processProjects(querySnapshot)
         setTimeout(() => {

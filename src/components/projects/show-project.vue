@@ -458,7 +458,7 @@ export default {
     dispatchPayload () {
       this.dispatchingLoader = !this.dispatchingLoader
 
-      const dispatcherUrl = `http://0.0.0.0:12987/send`
+      const dispatcherUrl = `${this.project.url}/${this.project.endpoint}`
       const payload = this.selectedEndpoint.payload.reduce((accumulator, parameter) => {
         accumulator[parameter.name] = parameter.value
 
@@ -468,9 +468,7 @@ export default {
       const body = {
         templateId: this.selectedEndpoint.templateName,
         data: {
-          payload: payload,
-          from: '9pitops@gmail.com',
-          to: 'fullstackdev25@gmail.com'
+          payload: payload
         }
       }
 
@@ -479,7 +477,15 @@ export default {
           this.$message('Dispatched successfully')
           this.dispatchingLoader = !this.dispatchingLoader
         })
-        .catch(err => console.log('[dispatcher] ', err))
+        .catch(err => {
+          this.$notify({
+            title: 'Error',
+            message: `Failed to dispatch - ${err.bodyText}`,
+            type: 'error'
+          })
+          this.dispatchingLoader = !this.dispatchingLoader
+          console.log('[dispatcher] ', err)
+        })
     },
     removeParameter (parameter) {
       const index = this.dispatchForm.payload.indexOf(parameter)

@@ -67,7 +67,7 @@ export default {
       db.collection('projects').add({
         name: this.form.name,
         url: this.form.url,
-        endpoint: this.form.endpoint,
+        endpoint: ['/', this.form.endpoint.replace(/\//g, '')].join(''),
         slug: slug,
         timestamp: firebase.firestore.FieldValue.serverTimestamp()
       })

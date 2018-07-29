@@ -370,7 +370,7 @@ export default {
 
       const project = {
         name: this.projectForm.name,
-        endpoint: this.projectForm.endpoint,
+        endpoint: ['/', this.projectForm.endpoint.replace(/\//g, '')].join(''),
         url: this.projectForm.url,
         slug: this.projectForm.name.split(' ').join('-').toLowerCase(),
         updatedAt: firebase.firestore.FieldValue.serverTimestamp()
@@ -413,7 +413,7 @@ export default {
     },
     openEndpointCreationDialog (namespaceIndex) {
       this.selectedNamespace = this.namespaces[namespaceIndex]
-      this.createEndpointform.endpoint = `/${this.project.endpoint}`
+      this.createEndpointform.endpoint = `${this.project.endpoint}`
       this.createEndpointFormVisible = true
     },
     createEndpoint () {

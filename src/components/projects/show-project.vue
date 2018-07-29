@@ -385,6 +385,7 @@ export default {
           this.editProjectFormVisible = false
           setTimeout(() => {
             this.$router.push(`/project/${project.slug}`)
+            this.project = Object.assign(this.project, project)
           }, 1000)
         })
         .catch(err => console.log('[Firebase] ', err))

@@ -1,6 +1,6 @@
 {
   "name": "tabellarius",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "scripts": {
     "build": "vue-cli-service build",
     "test": "vue-cli-service test",

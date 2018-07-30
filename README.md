@@ -8,17 +8,13 @@ Note that this project was created as the UI for [Strigoaica](https://github.com
 
 ![screenshot](https://www.imageupload.co.uk/images/2018/06/08/ScreenShot2018-06-08at6.00.09PM.png)
 
-### Setup
+### Firestore Setup
+![Firestore Setup](https://i.imgur.com/YEPxEZJ.gif)
+1. Create a project at [https://console.firebase.google.com](https://console.firebase.google.com)
+1. Click on **Add firebase to your web app** and copy the **config** object to `src/firebaseConfig.js`
+1. Create a **Firestore** database (If you select test mode skip the next steps)
+1. Go to the **Rules** section and remove the `: if false` to hacky allow remote connections
 
-Go to `firebase.google.com` and create a project.
-
-Get into the `project settings` and click `Add firebase to your web app`
-
-`Replace` the content of the `config` object into `src/firebaseConfig.js`.
-
-You now need to create a `firestore` database by clicking on `Database` from side nav and click `Create database` where it says Cloud firestore.
-
-When you are asked for `locked mode` or `test mode` choose **test mode**.
-
-Run `npm start` to start the project.
+### Run
+`npm start`
 

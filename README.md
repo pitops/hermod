@@ -6,7 +6,7 @@ Easily editable and configured for hosting to firebase.
 
 Note that this project was created as the UI for [Strigoaica](https://github.com/stefanoschrs/strigoaica) which is a project agnostic service for template based notification delivery. It can also work with any other system given that all requests go to a single endpoint.
 
-![screenshot](https://www.imageupload.co.uk/images/2018/06/08/ScreenShot2018-06-08at6.00.09PM.png)
+![Imgur](https://i.imgur.com/suHXocE.png)
 
 ### Firestore Setup
 ![Firestore Setup](https://i.imgur.com/YEPxEZJ.gif)
